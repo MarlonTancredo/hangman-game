@@ -1,6 +1,26 @@
 # Hangman game
 
-![ImgProject](./src/img/projectImg.png "hangman")
+![ImgProject](./src/img/projectImg.png "hangman-img")
+
+# File strcture
+
+![FileStructure](./src/img/fileStructure.png "file-structure")
+
+### `app`
+
+where the app component is rendered.
+
+### `components`
+
+All components and it's styles imported at app componet are located in this folder.
+
+### `data`
+
+The list of words and alphabet list used to create the buttons are in this folder.
+
+### `styles`
+
+The global styles are in this folder.
 
 # Getting Started with Create React App
 
