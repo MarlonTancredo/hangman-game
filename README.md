@@ -1,10 +1,10 @@
 # Hangman game
 
-![ImgProject](./src/img/projectImg.png "hangman-img")
+![ImgProject](./src/img/readme-file/projectImg.png "hangman-img")
 
 # File strcture
 
-![FileStructure](./src/img/fileStructure.png "file-structure")
+![FileStructure](./src/img/readme-file/fileStructure.png "file-structure")
 
 ### `app`
 

@@ -5,6 +5,7 @@ import * as S from "./styles";
 import { useEffect, useState } from "react";
 
 //Importing components.
+import HangmanDisplay from "../components/hangman-display/HangmanDisplay";
 import AttemptDisplay from "../components/attempt-display/AttemptDisplay";
 import WordDisplay from "../components/word-display/WordDisplay";
 import KeyboardButton from "../components/keyboard-button/KeyboardButton";
@@ -19,7 +20,7 @@ import { word } from "../data/word-list/words";
 //The App component render a keyboard, a display to show the attempts, a word, a help button and refresh page button.
 function App() {
   const [unknownWord, setUnknownWord] = useState(word.unknown);
-  const [attempt, setAttempt] = useState(5);
+  const [attempt, setAttempt] = useState(6);
   const [victory, setVictory] = useState(false);
 
   //See the word
@@ -74,6 +75,7 @@ function App() {
   return !victory && attempt !== 0 ? (
     <S.AppWrapper>
       <S.Title>Hangman Game</S.Title>
+      <HangmanDisplay attempt={attempt} />
       <AttemptDisplay attempt={attempt} />
       <WordDisplay word={unknownWord} />
       <S.Keypad>
@@ -94,13 +96,15 @@ function App() {
     </S.AppWrapper>
   ) : victory ? (
     <S.AppWrapper>
-      <S.DisplayMessage>Victory!</S.DisplayMessage>
+      <S.DisplayMessage>You won!!</S.DisplayMessage>
+      <HangmanDisplay attempt={attempt} />
       <WordDisplay word={unknownWord} />
       <RefreshPageButton />
     </S.AppWrapper>
   ) : (
     <S.AppWrapper>
-      <S.DisplayMessage>Lost!</S.DisplayMessage>
+      <S.DisplayMessage>You lost!</S.DisplayMessage>
+      <HangmanDisplay attempt={attempt} />
       <S.DisplayMessage>The word was: {word.random}</S.DisplayMessage>
       <RefreshPageButton />
     </S.AppWrapper>
