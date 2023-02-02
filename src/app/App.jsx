@@ -77,7 +77,7 @@ function App() {
       <S.Title>Hangman Game</S.Title>
       <HangmanDisplay attempt={attempt} />
       <AttemptDisplay attempt={attempt} />
-      <WordDisplay word={unknownWord} />
+      <WordDisplay category={word.category} word={unknownWord} />
       <S.Keypad>
         {letters.map((letter) => {
           return (
@@ -98,7 +98,7 @@ function App() {
     <S.AppWrapper>
       <S.DisplayMessage>You won!!</S.DisplayMessage>
       <HangmanDisplay attempt={attempt} />
-      <WordDisplay word={unknownWord} />
+      <WordDisplay category={word.category} word={unknownWord} />
       <RefreshPageButton />
     </S.AppWrapper>
   ) : (
