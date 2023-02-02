@@ -8,7 +8,7 @@
 
 ### `app`
 
-where the app component is rendered.
+All components are imported here.
 
 ### `components`
 
@@ -21,6 +21,17 @@ The list of words and alphabet list used to create the buttons are in this folde
 ### `styles`
 
 The global styles are in this folder.
+
+# Installation
+
+Make sure you have installed yarn and git in your pc.
+
+Clone this respository in your local machine.
+
+Choose the folder where you want to clone the repositoy and enter this comand: git clone https://github.com/MarlonTancredo/hangman-game.git
+
+Once the repository is cloned enter this command: yarn
+This command will download all packages needed in this project.
 
 # Getting Started with Create React App
 
