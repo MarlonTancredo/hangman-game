@@ -7,7 +7,7 @@ export const ButtonWrapper = styled.div``;
 
 export const Button = styled.button`
   cursor: pointer;
-  background-color: ${colors.red};
+  background-color: ${(props) => (props.isClicked ? colors.grey : colors.red)};
   color: ${colors.white};
   border: none;
   border-radius: 0.3rem;
@@ -15,7 +15,8 @@ export const Button = styled.button`
   height: 3rem;
   font-weight: bold;
   :hover {
-    background-color: ${colors.fullRed};
-    cursor: pointer;
+    background-color: ${(props) =>
+      props.isClicked ? colors.grey : colors.fullRed};
+    cursor: ${(props) => (props.isClicked ? "not-allowed" : "pointer")};
   }
 `;

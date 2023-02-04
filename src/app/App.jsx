@@ -67,8 +67,18 @@ function App() {
   };
 
   //Callback function used to get the button letter.
-  const getButtonValue = (buttonValue) => {
-    replaceUnknownLetter(buttonValue);
+  const getButtonValue = (buttonLetter) => {
+    replaceUnknownLetter(buttonLetter);
+    handleIsClicked(buttonLetter);
+  };
+
+  //Change the the value of isClicked to true.
+  const handleIsClicked = (buttonLetter) => {
+    for (let i = 0; i < letters.length; i++) {
+      if (letters[i].letter === buttonLetter) {
+        letters[i].isClicked = true;
+      }
+    }
   };
 
   //Case victory is false and attempt is diferent than 0.
@@ -80,10 +90,16 @@ function App() {
       <WordDisplay category={word.category} word={unknownWord} />
       <S.Keypad>
         {letters.map((letter) => {
-          return (
+          return letter.isClicked ? (
             <KeyboardButton
-              key={letter}
-              letter={letter}
+              key={letter.letter}
+              letter={letter.letter}
+              isClicked
+            />
+          ) : (
+            <KeyboardButton
+              key={letter.letter}
+              letter={letter.letter}
               sendToParent={getButtonValue}
             />
           );
