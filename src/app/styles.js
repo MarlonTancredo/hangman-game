@@ -12,6 +12,7 @@ export const AppWrapper = styled.div`
 `;
 
 export const Title = styled.p`
+  text-align: center;
   color: ${colors.white};
   font-size: ${fontSize.medium};
   font-weight: bold;
