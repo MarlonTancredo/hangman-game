@@ -4,13 +4,52 @@ const words = [
     category: "fruits",
     categoryList: ["orange", "banana", "strawberry", "raspberry"],
   },
-  { category: "dishes", categoryList: ["lasagna", "pasta"] },
-  { category: "drinks", categoryList: ["milk", "coffee", "juice", "water"] },
+  {
+    category: "animals",
+    categoryList: [
+      "dog",
+      "cat",
+      "lion",
+      "wolf",
+      "elephant",
+      "fox",
+      "raven",
+      "squirrel",
+    ],
+  },
+  {
+    category: "dishes",
+    categoryList: ["lasagna", "pasta", "barbecue", "pizza"],
+  },
+  {
+    category: "drinks",
+    categoryList: [
+      "milk",
+      "coffee",
+      "juice",
+      "water",
+      "wine",
+      "coke",
+      "soda",
+      "tea",
+    ],
+  },
   {
     category: "countries",
-    categoryList: ["brazil", "france", "spain", "italy", "portugal"],
+    categoryList: [
+      "brazil",
+      "france",
+      "spain",
+      "italy",
+      "portugal",
+      "germany",
+      "england",
+    ],
   },
-  { category: "environments", categoryList: ["montain", "ocean"] },
+  {
+    category: "environments",
+    categoryList: ["montain", "ocean", "desert", "lake"],
+  },
 ];
 
 const wordsLength = words.length;
