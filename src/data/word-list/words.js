@@ -62,8 +62,8 @@ const categoryListRandomIndex = Math.floor(Math.random() * categoryListLength);
 const categoryWord = words[wordsRandomIndex].category;
 const randomWord = categoryList[categoryListRandomIndex];
 
-console.log(categoryWord);
-console.log(randomWord);
+// console.log(categoryWord);
+// console.log(randomWord);
 
 //Count the charcters in randomWord and replace them with *.
 let unknownWord = "";
@@ -71,7 +71,7 @@ for (let i = 0; i < randomWord.length; i++) {
   unknownWord = unknownWord + "*";
 }
 
-console.log(unknownWord);
+// console.log(unknownWord);
 
 //Creating an object with random word and unknownWord.
 const word = {
