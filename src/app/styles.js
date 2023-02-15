@@ -36,6 +36,7 @@ export const DisplayMessage = styled.p`
 
 export const Footer = styled.div`
   margin-top: 2rem;
+  margin-bottom: 2rem;
   display: flex;
   gap: 2rem;
 `;
