@@ -8,8 +8,12 @@ import fifthStep from "../../img/hangman/4.jpg";
 import sixthStep from "../../img/hangman/5.jpg";
 import seventhStep from "../../img/hangman/6.jpg";
 
+type Props = {
+  attempt: number;
+};
+
 //This component return an image dipending of the step in the app component and an error message.
-const HangmanDisplay = ({ attempt }) => {
+const HangmanDisplay = ({ attempt }: Props) => {
   return attempt === 6 ? (
     <S.HangmanWrapper>
       <S.HangmamImg src={firstStep} alt="firstStep" />

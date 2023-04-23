@@ -35,7 +35,7 @@ function App() {
   }, [unknownWord]);
 
   //This function change attempt state if the user entered a letter that is not in the word.
-  const attemptCounter = (isCorrect) => {
+  const attemptCounter = (isCorrect: boolean) => {
     if (attempt === 0) {
       return;
     }
@@ -45,7 +45,7 @@ function App() {
   };
 
   //This function update the unknowWord state replacing the asterisk with the letter at the correct index.
-  const replaceUnknownLetter = (buttonValue) => {
+  const replaceUnknownLetter = (buttonValue: string) => {
     let isCorrect = false;
 
     const buttonValueLowerCase = buttonValue.toLowerCase();
@@ -67,13 +67,13 @@ function App() {
   };
 
   //Callback function used to get the button letter.
-  const getButtonValue = (buttonLetter) => {
+  const getButtonValue = (buttonLetter: string) => {
     replaceUnknownLetter(buttonLetter);
     handleIsClicked(buttonLetter);
   };
 
   //Change the the value of isClicked to true.
-  const handleIsClicked = (buttonLetter) => {
+  const handleIsClicked = (buttonLetter: string) => {
     for (let i = 0; i < letters.length; i++) {
       if (letters[i].letter === buttonLetter) {
         letters[i].isClicked = true;
