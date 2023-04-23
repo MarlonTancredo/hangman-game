@@ -1,5 +1,16 @@
 //List of words used at App component.
-const words = [
+type Words = {
+  category: string;
+  categoryList: string[];
+};
+
+type Word = {
+  category: string;
+  random: string;
+  unknown: string;
+};
+
+const words: Words[] = [
   {
     category: "fruits",
     categoryList: ["orange", "banana", "strawberry", "raspberry"],
@@ -74,7 +85,7 @@ for (let i = 0; i < randomWord.length; i++) {
 // console.log(unknownWord);
 
 //Creating an object with random word and unknownWord.
-const word = {
+const word: Word = {
   category: categoryWord,
   random: randomWord,
   unknown: unknownWord,

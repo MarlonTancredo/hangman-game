@@ -16,10 +16,11 @@ import HelpButton from "../components/help-button/HelpButton";
 import { letters } from "../data/alphabet-letters/letters";
 //List of words returns a ramdom word from the list.
 import { word } from "../data/word-list/words";
+const { category, random, unknown } = word;
 
 //The App component render a keyboard, a display to show the attempts, a word, a help button and refresh page button.
-function App() {
-  const [unknownWord, setUnknownWord] = useState(word.unknown);
+const App = () => {
+  const [unknownWord, setUnknownWord] = useState(unknown);
   const [attempt, setAttempt] = useState(6);
   const [victory, setVictory] = useState(false);
 
@@ -29,7 +30,7 @@ function App() {
   //Each time the unknownWord value is updated will be compared to word.random.
   useEffect(() => {
     //When unknownWord wil be the same word word.random vicetory state will be updated.
-    if (unknownWord === word.random) {
+    if (unknownWord === random) {
       setVictory(true);
     }
   }, [unknownWord]);
@@ -52,8 +53,8 @@ function App() {
     let newWord = unknownWord.split("");
 
     //Iterates unknownWord if buttonValue is in word.random.
-    for (let i = 0; i < word.random.length; i++) {
-      if (word.random[i] === buttonValueLowerCase) {
+    for (let i = 0; i < random.length; i++) {
+      if (random[i] === buttonValueLowerCase) {
         newWord[i] = buttonValueLowerCase;
         isCorrect = true;
       }
@@ -87,19 +88,16 @@ function App() {
       <S.Title>Hangman Game</S.Title>
       <HangmanDisplay attempt={attempt} />
       <AttemptDisplay attempt={attempt} />
-      <WordDisplay category={word.category} word={unknownWord} />
+      <WordDisplay category={category} word={unknownWord} />
       <S.Keypad>
-        {letters.map((letter) => {
-          return letter.isClicked ? (
-            <KeyboardButton
-              key={letter.letter}
-              letter={letter.letter}
-              isClicked
-            />
+        {letters.map((myletter) => {
+          const { letter, isClicked } = myletter;
+          return isClicked ? (
+            <KeyboardButton key={letter} letter={letter} isClicked />
           ) : (
             <KeyboardButton
-              key={letter.letter}
-              letter={letter.letter}
+              key={letter}
+              letter={letter}
               sendToParent={getButtonValue}
             />
           );
@@ -114,17 +112,17 @@ function App() {
     <S.AppWrapper>
       <S.DisplayMessage>You won!!</S.DisplayMessage>
       <HangmanDisplay attempt={attempt} />
-      <WordDisplay category={word.category} word={unknownWord} />
+      <WordDisplay category={category} word={unknownWord} />
       <RefreshPageButton />
     </S.AppWrapper>
   ) : (
     <S.AppWrapper>
       <S.DisplayMessage>You lost!</S.DisplayMessage>
       <HangmanDisplay attempt={attempt} />
-      <S.DisplayMessage>The word was: {word.random}</S.DisplayMessage>
+      <S.DisplayMessage>The word was: {random}</S.DisplayMessage>
       <RefreshPageButton />
     </S.AppWrapper>
   );
-}
+};
 
 export default App;

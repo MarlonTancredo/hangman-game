@@ -6,7 +6,7 @@ import { colors } from "../../styles/globalStyles";
 export const ButtonWrapper = styled.div``;
 
 type Props = {
-  isClicked: boolean;
+  isClicked?: boolean;
 };
 
 export const Button = styled.button`

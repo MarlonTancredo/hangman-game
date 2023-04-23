@@ -1,5 +1,10 @@
 //List of letters used to assign values to the button rendered at App component.
-export const letters = [
+type Letters = {
+  letter: string;
+  isClicked: boolean;
+};
+
+export const letters: Letters[] = [
   { letter: "a", isClicked: false },
   { letter: "b", isClicked: false },
   { letter: "c", isClicked: false },
